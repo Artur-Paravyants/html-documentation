@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <meta charset="UTF-8">
+        <title>HTML Documentation</title>
+    </head>
+
+  <body>
+        <nav id="navbar">
+            <header id="navbar-header">HTML Documentation</header>
+            <ul id="navbar-list">
+                <li><a class="nav-link" href="#Introduction" >Introduction</a></li>
+                <li><a class="nav-link" href="#Anatomy_Of_An_HTML_Element" >Anatomy Of An HTML Element</a></li>
+                <li><a class="nav-link" href="#Nesting_Elements">Nesting Elements</a></li>
+                <li><a class="nav-link" href="#Block_Vs_Inline_Elements">Block VS Inline Elements</a></li>
+                <li><a class="nav-link" href="#Empty_Elements">Empty Elements</a></li>
+                <li><a class="nav-link" href="#Attributes">Attributes</a></li>
+                <li><a class="nav-link" href="#Boolean_Attributes">Boolean Attributes</a></li>
+                <li><a class="nav-link" href="#Omitting_Quotes_And_Attribute_Values">Omitting Quotes And Attribute Values</a></li>
+                <li><a class="nav-link" href="#Single_Or_Double_Quotes?">Single Or Double Quotes?</a></li>
+                <li><a class="nav-link" href="#Whitespace_In_HTML">Whitespace In HTML</a></li>
+                <li><a class="nav-link" href="#HTML_Comments">HTML Comments</a></li>
+                <li><a class="nav-link" href="#Summary">Summary</a></li>
+                <li><a class="nav-link" href="#Reference">Reference</a></li>
+            </ul>
+      </nav>
+    
+    
+    <main id="main-doc">
+    
+        <section class="main-section" id="Introduction">
+
+            <header>Introduction</header>
+            <p>HTML (Hypertext Markup Language) is a markup language that tells web browsers how to structure the web pages you visit. It can be as complicated or as simple as the web developer wants it to be. HTML consists of a series of elements, which you use to enclose, wrap, or mark up different parts of content to make it appear or act in a certain way. The enclosing tags can make content into a hyperlink to connect to another page, italicize words, and so on. For example, consider the following line of text:</p>
+            
+            <div id="single-box">
+                <code>My cat is very grumpy</code>
+            </div>
+
+            <div>
+                <p>If we wanted the text to stand by itself, we could specify that it is a paragraph by enclosing it in a paragraph <code> &lt;p&gt;</code> element:</p>
+            </div>
+            
+            <div id="single-box">
+                <code>&lt;p&gt; My cat is very grumpy &lt;/p&gt;</code>
+            </div>
+            
+            <div>
+                <p>Note: Tags in HTML are not case-sensitive. This means they can be written in uppercase or lowercase. For example, a <code>&lt;title&gt;</code> tag could be written as <code>&lt;title&gt;</code>, <code>&lt;TITLE&gt;</code>, <code>&lt;Title&gt;</code>, <code>&lt;TiTlE&gt;</code>, etc., and it will work. However, it is best practice to write all tags in lowercase for consistency and readability.</p>
+            </div>
+
+        </section>
+      
+        <section class="main-section" id="Anatomy_Of_An_HTML_Element">
+
+            <header id="header-space">Anatomy Of An HTML Element</header>
+            <p>Let's further explore our paragraph element from the previous section:</p>
+            <img src="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started/grumpy-cat-small.png" alt="An html element is comprised of the opening tag, the content and the closing tag ">
+            
+            <p>The anatomy of our element is:</p>
+            
+            <ul>
+                <li>The opening tag: This consists of the name of the element (in this example, p for paragraph), wrapped in opening and closing angle brackets. This opening tag marks where the element begins or starts to take effect. In this example, it precedes the start of the paragraph text.</li>
+                <li>The content: This is the content of the element. In this example, it is the paragraph text.</li>
+                <li><b>The closing tag:</b> This is the same as the opening tag, except that it includes a forward slash before the element name. This marks where the element ends. Failing to include a closing tag is a common beginner error that can produce peculiar results.</li>
+            </ul>
+
+            <p>The element is the opening tag, followed by content, followed by the closing tag.</p>
+        </section>
+      
+        <section class="main-section" id="Nesting_Elements">
+
+            <header id="header-space">Nesting Elements</header>
+            
+            <p>Elements can be placed within other elements. This is called nesting. If we wanted to state that our cat is very grumpy, we could wrap the word very in a <code>&lt;strong&gt;</code> element, which means that the word is to have strong(er) text formatting:</p>
+            
+            <div id="single-box">
+                <code>&lt;p&gt;My cat is &lt;strong&gt;very&lt;/strong&gt; grumpy.</code>
+            </div>
+            
+        
+            <p>There is a right and wrong way to do nesting. In the example above, we opened the <code>p</code> element first, then opened the <code>strong</code> element. For proper nesting, we should close the <code>strong</code> element first, before closing the <code>p</code>.</p>
+            <p>The following is an example of the wrong way to do nesting:</p>
+        
+            <div id="red-box">
+                <code>&lt;p&gt;My cat is &lt;strong&gt;very grumpy.&lt;/p&gt;&lt;/strong&gt;</code>
+            </div>
+        
+        
+            <p><b>The tags have to open and close in a way that they are inside or outside one another</b>. With the kind of overlap in the example above, the browser has to guess at your intent. This kind of guessing can result in unexpected results.</p>
+            
+      </section>
+      
+      <section class="main-section" id="Block_Vs_Inline_Elements">
+
+            <header id="header-space">Block Vs Inline Elements</header>
+            
+            <p>There are two important categories of elements to know in HTML: block-level elements and inline elements.</p>
+            
+            <ul>
+            <li>Block-level elements form a visible block on a page. A block-level element appears on a new line following the content that precedes it. Any content that follows a block-level element also appears on a new line. Block-level elements are usually structural elements on the page. For example, a block-level element might represent headings, paragraphs, lists, navigation menus, or footers. A block-level element wouldn't be nested inside an inline element, but it might be nested inside another block-level element.</li>
+            <li>Inline elements are contained within block-level elements, and surround only small parts of the document's content (not entire paragraphs or groupings of content). An inline element will not cause a new line to appear in the document. It is typically used with text, for example an <code>&lt;a&gt;</code> element creates a hyperlink, and elements such as <code>&lt;em&gt;</code> or <code>&lt;strong&gt;</code> create emphasis.</li>
+            </ul>
+            
+            <p>Consider the following example:</p>
+            
+            <div id="single-box">
+            <code>&lt;em&gt;first&lt;/em&gt;&lt;em&gt;second&lt;/em&gt;&lt;em&gt;third&lt;/em&gt;</code> <br> <br>
+            <code>&lt;p&gt;fourth&lt;/p&gt;&lt;p&gt;fifth&lt;/p&gt;&lt;p&gt;sixth&lt;/p&gt;</code>
+            </div>
+            
+            <p><code>&lt;em&gt;</code> is an inline element. As you see below, the first three elements sit on the same line, with no space in between. On the other hand, <code>&lt;p&gt;</code> is a block-level element. Each p element appears on a new line, with space above and below. (The spacing is due to default CSS styling that the browser applies to paragraphs.)</p>
+            
+            <div id="output-box">
+                <p>firstsecondthird</p>
+                <p>fourth</p>
+                <p>fifth</p>
+                <p>sixth</p>
+            </div>
+            
+      </section>
+      
+      <section class="main-section" id="Empty_Elements">
+
+            <header id="header-space">Empty Elements</header>
+            
+            <p>Not all elements follow the pattern of an opening tag, content, and a closing tag. Some elements consist of a single tag, which is typically used to insert/embed something in the document. For example, the <code>&lt;img&gt;</code> element embeds an image file onto a page:</p>
+            
+            <div id="single-box">
+                <code>&lt;img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png"&gt;</code>
+            </div>
+            
+            <p>This would output the following:</p>
+            
+            <img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" alt="Firefox Logo">
+            
+            <div>
+                <p>Note: Empty elements are sometimes called void elements.</p>
+            </div>
+        
+      </section>
+    
+    <section class="main-section" id="Attributes">
+
+        <header id="header-space">Attributes</header>
+        
+        <p>Elements can also have attributes. Attributes look like this:</p>
+        
+        <img src="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started/grumpy-cat-attribute-small.png" alt="Class='editors-note'">
+        
+        <p>Attributes contain extra information about the element that won't appear in the content. In this example, the <code>class</code> attribute is an identifying name used to target the element with style information.</p>
+        
+        <p>An attribute should have:</p>
+        <ul>
+            <li>A space between it and the element name. (For an element with more than one attribute, the attributes should be separated by spaces too.)</li>
+            <li>The attribute name, followed by an equal sign.</li>
+            <li>An attribute value, wrapped with opening and closing quote marks.</li>
+        </ul>
+      
+      
+    </section>
+    
+    <section class="main-section" id="Boolean_Attributes">
+
+        <header id="header-space">Boolean Attributes</header>
+        
+        <p>Sometimes you will see attributes written without values. This is entirely acceptable. These are called Boolean attributes. Boolean attributes can only have one value, which is generally the same as the attribute name. For example, consider the <code>disabled</code> attribute, which you can assign to form input elements. (You use this to disable the form input elements so the user can't make entries. The disabled elements typically have a grayed-out appearance.) For example:</p>
+        
+        <div id="single-box">
+            <code>&lt;input type="text" disabled="disabled"&gt;</code>
+        </div>
+        
+        <p>As shorthand, it is acceptable to write this as follows:</p>
+        
+        <div id="single-box">
+            <code>&lt;!-- using the disabled attribute prevents the end user from entering text into the input box --&gt;</code> <br> <br>
+            
+            <code>&lt;input type="text" disabled&gt;</code> <br> <br>
+            
+            <code>&lt;!-- text input is allowed, as it doesn't contain the disabled attribute --&gt;</code> <br> <br>
+            
+            <code>&lt;input type="text"&gt;</code>
+        
+        </div>
+        
+        <p>For reference, the example above also includes a non-disabled form input element. The HTML from the example above produces this result:</p>
+        
+        <div id="output-box">
+            <input type="text" disabled>
+            <input type="text">
+        </div>
+  </section>
+
+    <section class="main-section" id="Omitting_Quotes_And_Attribute_Values">
+
+      <header id="header-space">Omitting Quotes And Attribute Values</header>
+      
+      <p>If you look at code for a lot of other sites, you might come across a number of strange markup styles, including attribute values without quotes. This is permitted in certain circumstances, but it can also break your markup in other circumstances. For example, if we revisit our link example from earlier, we could write a basic version with only the <code>href</code> attribute, like this:</p>
+      
+      <div id="single-box">
+        <code>&lt;a href=https://www.mozilla.org/&gt;favorite website&lt;/a&gt;</code>
+      </div>
+      
+      <p>
+        However, as soon as we add the <code>title</code> attribute in this way, there are problems:
+      </p>
+      
+      <div id="red-box">
+        <code>&lt;a href=https://www.mozilla.org/ title=The Mozilla homepage&gt;favorite website&lt;/a&gt;</code>
+      </div>
+      
+      <p>As written above, the browser misinterprets the markup, mistaking the <code>title</code> attribute for three attributes: a title attribute with the value <i>The</i>, and two Boolean attributes, <code>Mozilla</code> and <code>homepage</code>. Obviously, this is not intended! It will cause errors or unexpected behavior, as you can see in the live example below. Try hovering over the link to view the title text!</p>
+      
+      <div id="output-box">
+        <a target="_blank" href=https://www.mozilla.org/>favorite website</a>
+        <a target="_blank" href=https://www.mozilla.org/ title=The Mozilla homepage>favorite website</a>
+      </div>
+    
+    <p>Always include the attribute quotes. It avoids such problems, and results in more readable code.</p>
+      
+    </section>
+  
+    <section class="main-section" id="Single_Or_Double_Quotes?">
+
+        <header id="header-space">Single Or Double Quotes?</header>
+        
+        <p>In this article you will also notice that the attributes are wrapped in double quotes. However, you might see single quotes in some HTML code. This is a matter of style. You can feel free to choose which one you prefer. Both of these lines are equivalent:</p>
+        
+        <div id="single-box">
+            
+            <code>&lt;a href="https://www.example.com"&gt;A link to my example.&lt;/a&gt;</code> <br> <br>
+    
+            <code>&lt;a href='https://www.example.com'&gt;A link to my example.&lt;/a&gt;</code>
+            
+        </div>
+        
+        <p>Make sure you don't mix single quotes and double quotes. This example (below) shows a kind of mixing quotes that will go wrong:</p>
+        
+        <div id="red-box">
+            <code>&lt;a href="https://www.example.com'&gt;A link to my example.&lt;/a&gt;</code>
+        </div>
+        
+        <p>However, if you use one type of quote, you can include the other type of quote inside your attribute values:</p>
+        
+        <div id="single-box">
+            <code>&lt;a href="https://www.example.com" title="Isn't this fun?"&gt;A link to my example.&lt;/a&gt;</code>
+        </div>
+        
+        <p>To use quote marks inside other quote marks of the same type (single quote or double quote), use HTML entities. For example, this will break:</p>
+        
+        <div id="red-box">
+            <code>&lt;a href='https://www.example.com' title='Isn't this fun?'&gt;A link to my example.&lt;/a&gt;</code>
+        </div>
+        
+        <p>Instead, you need to do this:</p>
+        
+        <div id="single-box">
+            <code>&lt;a href='https://www.example.com' title='Isn&apos;t this fun?'&gt;A link to my example.&lt;/a&gt;</code>
+        </div>
+        
+      
+    </section>
+  
+  <section class="main-section" id="Whitespace_In_HTML">
+
+        <header id="header-space">Whitespace In HTML</header>
+        
+        <p>In the examples above, you may have noticed that a lot of whitespace is included in the code. This is optional. These two code snippets are equivalent:</p>
+        
+        <div id="single-box">
+            <p> &lt;p&gt;Dogs are silly.&lt;/p&gt; </p>
+            <p>&lt;p&gt;Dogs&emsp;&emsp; are<br>
+                &emsp;&emsp;&emsp;&emsp;silly.&lt;/p&gt;</p>
+        </div>
+        
+        <p>No matter how much whitespace you use inside HTML element content (which can include one or more space character, but also line breaks), the HTML parser reduces each sequence of whitespace to a single space when rendering the code. So why use so much whitespace? The answer is readability.</p>
+        
+        <p>It can be easier to understand what is going on in your code if you have it nicely formatted. In our HTML we've got each nested element indented by two spaces more than the one it is sitting inside. It is up to you to choose the style of formatting (how many spaces for each level of indentation, for example), but you should consider formatting it.</p>
+        
+  </section>
+  
+  <section class="main-section" id="HTML_Comments">
+    
+        <header id="header-space">HTML Comments</header>
+
+        <p>HTML has a mechanism to write comments in the code. Browsers ignore comments, effectively making comments invisible to the user. The purpose of comments is to allow you to include notes in the code to explain your logic or coding. This is very useful if you return to a code base after being away for long enough that you don't completely remember it. Likewise, comments are invaluable as different people are making changes and updates.</p>
+        
+        <p>To write an HTML comment, wrap it in the special markers <code>&lt;!--</code> and <code>--&gt;</code>. For example:</p>
+        
+        <div id="single-box">
+        
+            <code>&lt;p&gt;I'm not inside a comment&lt;p&gt;</code> <br> <br>
+        
+            <code>&lt;!-- &lt;p&gt;I am!&lt;/p&gt; --&gt;</code>
+        
+        </div>
+        
+        <p>As you can see below, only the first paragraph is displayed in the live output.</p>
+        
+        <div id="output-box">
+            <p>I'm not inside a comment</p>
+
+            <!-- <p>I am!</p> -->
+        </div>
+    
+  </section>
+  
+  <section class="main-section" id="Summary">
+
+        <header id="header-space">Summary</header>
+        
+        <p>You made it to the end of the article! We hope you enjoyed your tour of the basics of HTML.</p>
+        
+        <p>At this point, you should understand what HTML looks like, and how it works at a basic level. You should also be able to write a few elements and attributes. The subsequent articles of this module go further on some of the topics introduced here, as well as presenting other concepts of the language.</p>
+    </section>
+  
+  <section class="main-section" id="Reference">
+
+        <header id="header-space">Reference</header>
+        
+        <ul>
+            <li>All the documentaion in this page is taken from <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started">MDN</a></li>
+        </ul>
+   </section>
+ 
+    </main>
+  </body>
+</html>

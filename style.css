@@ -1,0 +1,148 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #16181c;
+  }
+  
+  
+  
+#navbar {
+    height: 100%;
+    width: 250px;
+    padding-right: 10px;
+    position: fixed;
+    background-color: #22262c;
+    border-right: 2px solid white;
+}
+  
+#navbar-header {
+    padding: 10px;
+    color: white;
+    font-family: Copperplate;
+}
+  
+#navbar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    
+}
+  
+nav li {
+    border-top: 1px solid;
+    border-color: white;
+    font-family: Copperplate;
+}
+  
+nav li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 2s ease-out 100ms, color 0.1s ease-out 50ms;
+}
+  
+nav li a:hover {
+    background-color: #e4e1dc;
+    color: black;
+}
+  
+#main-doc {
+    padding-top: 20px;
+    margin-left: 300px;
+    margin-right: 50px;
+    font-family: Andale Mono;
+    color: white;
+}
+  
+  
+img {
+    max-width: 100%;
+    height: auto;
+}
+  
+header {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: copperplate;
+}
+  
+.main-section {
+    padding-top: 20px;
+}
+  
+  
+p code {
+    background-color: #696969;
+    border-radius: 5px;
+    padding: 1px 2px 1px 2px;
+    font-weight: bold;  
+}
+  
+#single-box {
+    background-color: #696969;
+    border-radius: 5px;
+    padding: 25px;
+    font-size: 15px;
+ 
+}
+  
+
+#red-box {
+    background-color: #2a0000;
+    border-radius: 5px;
+    padding: 25px; 
+    font-size: 15px;
+}
+  
+#output-box {
+    border: solid;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 15px;
+}
+  
+div {
+    padding: 15px;
+}
+  
+main ul li {
+    padding: 10px;
+}
+  
+main a:link {
+    color: #00FFFF;
+}
+  
+main a:visited {
+    color: #FF00FF
+}
+  
+@media(max-width: 980px) {
+    
+    #main-doc {
+      margin-left: 0;
+      margin-top: 10px;
+      padding-left: 20px;
+      
+    }
+    
+    #navbar-header {
+      display: block;
+    }
+   
+    
+    #navbar {
+      display: block;
+      overflow: auto;
+      position: static;
+      width: 100%;
+      height: 290px;    
+    }
+    
+    #single-box, #red-box, #output-box {
+      word-break: break-word;
+    }
+  
+}
